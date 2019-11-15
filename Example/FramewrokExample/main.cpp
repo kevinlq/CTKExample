@@ -1,5 +1,5 @@
 ﻿// Qt lib
-#include <QApplication>
+#include <QCoreApplication>
 #include <QDebug>
 #include <QSharedPointer>
 #include <QDirIterator>
@@ -16,7 +16,7 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QCoreApplication a(argc, argv);
 
     ctkPluginFrameworkFactory factory;
     QSharedPointer<ctkPluginFramework> framework = factory.getFramework();
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
     // 插件上下文
     ctkPluginContext *pContent = framework->getPluginContext();
-    QString strPath = QApplication::applicationDirPath() + "/plugins";
+    QString strPath = QCoreApplication::applicationDirPath() + "/plugins";
 
     QStringList lsFilters;
     lsFilters << "*.dll" << "*.so";
