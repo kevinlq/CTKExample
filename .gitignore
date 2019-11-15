@@ -31,4 +31,8 @@
 *.out
 *.app
 
+*.db
+
 *.pro.user
+
+\tempFile
