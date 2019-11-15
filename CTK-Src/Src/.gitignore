@@ -1,0 +1,12 @@
+# Ignore all back-up files...
+*~
+*.bak
+
+# Exclude Kdevelop4 files ...
+.kdev*
+
+# Exclude QtCreator files ...
+CMakeLists.txt.user*
+
+# ignore ctags file
+tags

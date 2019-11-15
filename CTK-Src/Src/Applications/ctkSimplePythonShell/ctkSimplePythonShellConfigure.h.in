@@ -1,0 +1,21 @@
+#ifndef __ctkSimplePythonShellConfigure_h
+#define __ctkSimplePythonShellConfigure_h
+
+
+///
+/// Here is where system computed values get stored
+///
+
+#cmakedefine CTK_BUILD_SHARED_LIBS
+#cmakedefine CTK_WRAP_PYTHONQT_LIGHT
+
+//#define CTK_PYTHON_LIBRARY_DIR_BUILD "@LIBRARY_OUTPUT_DIRECTORY@"
+
+#cmakedefine CTK_WRAP_PYTHONQT_USE_VTK
+
+#ifdef CTK_WRAP_PYTHONQT_USE_VTK
+# define VTK_PYTHON_LIBRARY_DIR_BUILD "@VTK_DIR@/bin"
+#endif
+
+#endif
+

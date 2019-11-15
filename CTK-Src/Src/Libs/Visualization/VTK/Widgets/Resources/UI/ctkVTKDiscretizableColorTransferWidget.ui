@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ctkVTKDiscretizableColorTransferWidget</class>
+ <widget class="QWidget" name="ctkVTKDiscretizableColorTransferWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>447</width>
+    <height>232</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Color Transfer Function</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="margin">
+    <number>0</number>
+   </property>
+   <item row="1" column="3">
+    <widget class="QToolButton" name="undoButton">
+     <property name="toolTip">
+      <string>Undo last change of range</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ctkVTKWidgets.qrc">
+       <normaloff>:/Icons/undo.png</normaloff>:/Icons/undo.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QToolButton" name="resetRangeButton">
+     <property name="toolTip">
+      <string>Reset ranges to data range</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ctkVTKWidgets.qrc">
+       <normaloff>:/Icons/resetRange.png</normaloff>:/Icons/resetRange.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QToolButton" name="shrinkRangeButton">
+     <property name="toolTip">
+      <string>Shrink display range to current range</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ctkVTKWidgets.qrc">
+       <normaloff>:/Icons/shrink.png</normaloff>:/Icons/shrink.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QToolButton" name="expandRangeButton">
+     <property name="toolTip">
+      <string>Expand current range to display range</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ctkVTKWidgets.qrc">
+       <normaloff>:/Icons/expand.png</normaloff>:/Icons/expand.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="QToolButton" name="invertColorTransferFunctionButton">
+     <property name="toolTip">
+      <string>Invert color map</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../ctkVTKWidgets.qrc">
+       <normaloff>:/Icons/invert.png</normaloff>:/Icons/invert.png</iconset>
+     </property>
+     <property name="popupMode">
+      <enum>QToolButton::DelayedPopup</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="3">
+    <widget class="QToolButton" name="optionButton">
+     <property name="contextMenuPolicy">
+      <enum>Qt::DefaultContextMenu</enum>
+     </property>
+     <property name="toolTip">
+      <string>Other options</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="3">
+    <widget class="ctkRangeWidget" name="rangeSlider" native="true"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLabel" name="maxOpacityLabel">
+     <property name="text">
+      <string>1</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" rowspan="3">
+    <widget class="ctkDoubleSlider" name="opacitySlider" native="true">
+     <property name="value" stdset="0">
+      <double>1.000000000000000</double>
+     </property>
+     <property name="singleStep" stdset="0">
+      <double>0.100000000000000</double>
+     </property>
+     <property name="pageStep" stdset="0">
+      <double>0.200000000000000</double>
+     </property>
+     <property name="minimum" stdset="0">
+      <double>0.000001000000000</double>
+     </property>
+     <property name="maximum" stdset="0">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="ctkVTKScalarsToColorsComboBox" name="scalarsToColorsSelector"/>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLabel" name="minOpacityLabel">
+     <property name="text">
+      <string>0</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ctkDoubleSlider</class>
+   <extends>QWidget</extends>
+   <header>ctkDoubleSlider.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ctkRangeWidget</class>
+   <extends>QWidget</extends>
+   <header>ctkRangeWidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ctkVTKScalarsToColorsComboBox</class>
+   <extends>QComboBox</extends>
+   <header>ctkVTKScalarsToColorsComboBox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ctkVTKWidgets.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>Tours</category>
+  <title>Execution Model Tour</title>
+  <description>
+  Shows one of each type of parameter.
+  </description>
+  <version>1.0</version>
+  <documentation-url></documentation-url>
+  <license></license>
+  <contributor>Daniel Blezek</contributor>
+
+  <parameters>
+    <label>Scalar Parameters</label>
+    <description>
+    Variations on scalar parameters
+    </description>
+    <integer>
+      <name>integerVariable</name>
+      <flag>i</flag>
+      <longflag>integer</longflag>
+      <description>
+      An integer without constraints
+      </description>
+      <label>Integer Parameter</label>
+      <default>30</default>
+    </integer>
+    <boolean>
+      <name>booleanParam</name>
+      <flag>b</flag>
+      <description>
+      A boolean without constraints
+      </description>
+      <label>Boolean Parameter</label>
+    </boolean>
+    <double>
+      <name>doubleVariable</name>
+      <flag>d</flag>
+      <longflag>double</longflag>
+      <description>An double with constraints</description>
+      <label>Double Parameter</label>
+      <default>30</default>
+      <constraints>
+        <minimum>0</minimum>
+        <maximum>1.e3</maximum>
+        <step>0</step>
+      </constraints>
+    </double>
+  </parameters>
+
+  <parameters advanced="true">
+    <label>Vector Parameters</label>
+    <description>Variations on vector parameters</description>
+    <float-vector>
+      <name>floatVector</name>
+      <flag>f</flag>
+      <description>A vector of floats</description>
+      <label>Float Vector Parameter</label>
+      <default>1.3,2,-14</default>
+    </float-vector>
+    <string-vector>
+      <name>stringVector</name>
+      <longflag>string_vector</longflag>
+      <description>A vector of strings</description>
+      <label>String Vector Parameter</label>
+      <default>"foo",bar,"foobar"</default>
+    </string-vector>
+  </parameters>
+
+  <parameters>
+    <label>Enumeration Parameters</label>
+    <description>Variations on enumeration parameters</description>
+    <string-enumeration>
+      <name>stringChoice</name>
+      <flag>e</flag>
+      <longflag>enumeration</longflag>
+      <description>An enumeration of strings</description>
+      <label>String Enumeration Parameter</label>
+      <default>foo</default>
+      <element>foo</element>
+      <element>"foobar"</element>
+      <element>foofoo</element>
+    </string-enumeration>
+    <point>
+    <name>pointVar</name>
+    <flag>p</flag>
+    <description>asf</description>
+    <label>A point</label>
+    <default>0.5,-34.2,43</default>
+      </point>
+  </parameters>
+
+  <parameters advanced="true">
+    <label>Directory I/O Parameters</label>
+    <description>Various Directory I/O parameters.</description>
+    <directory>
+      <name>dirVar</name>
+      <longflag>dirVar</longflag>
+      <description>Some dir</description>
+      <label>Some dir</label>
+      <default>/home</default>
+    </directory>
+  </parameters>
+
+  <parameters advanced="true">
+    <label>File I/O Parameters</label>
+    <description>Various File I/O parameters.</description>
+    <file>
+      <name>inputFileVarNoFileExtensions</name>
+      <longflag>if1</longflag>
+      <description>Input file, with no file extensions specified, so all files selectable.</description>
+      <label>Input file, no extensions specified.</label>
+      <default>bla</default>
+      <channel>input</channel>
+    </file>
+    <file fileExtensions=".txt,.mat">
+      <name>inputFileVarListCommaSeparated</name>
+      <longflag>if2</longflag>
+      <description>Input file, where a correct comma separated list of .txt and .mat are specified, which should include the first dot, but should not include any asterisks.</description>
+      <label>Input file, .txt or .mat file specified using leading dot.</label>
+      <default>bla.txt</default>
+      <channel>input</channel>
+    </file>
+    <file fileExtensions="txt,mat">
+      <name>inputFileVarListCommaSeparatedWithMissingFirstDot</name>
+      <longflag>if3</longflag>
+      <description>Input file, where the XML has missed the first dot of the file extensions.</description>
+      <label>Input file, .txt or .mat file specified without leading dot.</label>
+      <default>bla3.txt</default>
+      <channel>input</channel>
+    </file>
+    <file>
+      <name>outputFileVarNoFileExtensions</name>
+      <longflag>of1</longflag>
+      <description>Output file, with no file extensions specified, so all files selectable.</description>
+      <label>Output file, no extensions specified.</label>
+      <default>bla</default>
+      <channel>output</channel>
+    </file>
+    <file fileExtensions=".txt,.mat">
+      <name>outputFileVarListCommaSeparated</name>
+      <longflag>of2</longflag>
+      <description>Output file, where a comma separated list of .txt and .mat are specified, which should include the first dot, but should not include any asterisks.</description>
+      <label>Output file, .txt or .mat file specified using leading dot.</label>
+      <default>bla.txt</default>
+      <channel>output</channel>
+    </file>
+    <file fileExtensions="txt,mat">
+      <name>outputFileVarListCommaSeparatedWithMissingFirstDot</name>
+      <longflag>of3</longflag>
+      <description>Output file, where the XML has missed the first dot of the file extensions.</description>
+      <label>Output file, .txt or .mat file specified without leading dot.</label>
+      <default>bla3.txt</default>
+      <channel>output</channel>
+    </file>
+  </parameters>
+
+  <parameters advanced="true">
+    <label>Geometry I/O Parameters</label>
+    <description>Various Geometry I/O parameters, which are for things like vtkPolyData.</description>
+    <geometry>
+      <name>inputGeometryVarNoFileExtensions</name>
+      <longflag>ig1</longflag>
+      <description>Input geometry, with no file extensions specified, so all files selectable.</description>
+      <label>Input geometry, no extensions specified.</label>
+      <default>bla</default>
+      <channel>input</channel>
+    </geometry>
+    <geometry fileExtensions=".vtk,.vtp">
+      <name>inputGeometryVarListCommaSeparated</name>
+      <longflag>ig2</longflag>
+      <description>Input geometry, where a comma separated list is specified, which should include the first dot, but should not include any asterisks.</description>
+      <label>Input geometry, .vtk or .vtp file specified with a leading dot.</label>
+      <default>bla.vtk</default>
+      <channel>input</channel>
+    </geometry>
+    <geometry fileExtensions=".vtk,.vtp">
+      <name>inputGeometryVarListCommaSeparatedWithMissingFirstDot</name>
+      <longflag>ig3</longflag>
+      <description>Input geometry, where the XML has incorrectly missed the first dot of the file extensions.</description>
+      <label>Input geometry, .vtk or .vtp file specified without a leading dot.</label>
+      <default>bla3.vtk</default>
+      <channel>input</channel>
+    </geometry>
+    <geometry>
+      <name>outputGeometryVarNoFileExtensions</name>
+      <longflag>og1</longflag>
+      <description>Output geometry, with no file extensions specified, so all files selectable.</description>
+      <label>Output geometry, no extensions specified.</label>
+      <default>bla</default>
+      <channel>output</channel>
+    </geometry>
+    <geometry fileExtensions=".vtk,.vtp">
+      <name>outputGeometryVarListCommaSeparated</name>
+      <longflag>og2</longflag>
+      <description>Output geometry, where a comma separated list is specified, which should include the first dot, but should not include any asterisks.</description>
+      <label>Output geometry, .vtk or .vtp file specified with a leading dot.</label>
+      <default>bla.vtk</default>
+      <channel>output</channel>
+    </geometry>
+    <geometry fileExtensions=".vtk,.vtp">
+      <name>outputGeometryVarListCommaSeparatedWithMissingFirstDot</name>
+      <longflag>og3</longflag>
+      <description>Output geometry, where the XML has incorrectly missed the first dot of the file extensions.</description>
+      <label>Output geometry, .vtk or .vtp file specified without a leading dot.</label>
+      <default>bla3.vtk</default>
+      <channel>output</channel>
+    </geometry>
+  </parameters>
+
+</executable>
+
