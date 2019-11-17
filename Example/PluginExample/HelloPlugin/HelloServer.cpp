@@ -1,4 +1,4 @@
-﻿#include "HelloServer.h"
+#include "HelloServer.h"
 
 HelloServer::HelloServer()
 {

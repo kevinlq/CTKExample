@@ -1,4 +1,4 @@
-﻿#ifndef HELLOIMPL_H
+#ifndef HELLOIMPL_H
 #define HELLOIMPL_H
 
 #include "HelloServer.h"

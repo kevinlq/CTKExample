@@ -1,4 +1,4 @@
-﻿#include "HelloImpl.h"
+#include "HelloImpl.h"
 
 #include "ctkPluginContext.h"
 

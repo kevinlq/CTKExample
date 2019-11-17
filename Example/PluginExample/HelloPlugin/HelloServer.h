@@ -1,4 +1,4 @@
-﻿#ifndef HELLOSERVER_H
+#ifndef HELLOSERVER_H
 #define HELLOSERVER_H
 
 #include <QtPlugin>
