@@ -3,20 +3,21 @@ include($$PWD/../../../CTKExample_SupportLib.pri)
 
 QT +=core
 
-TARGET = HelloPlugin
+TARGET = WelcomeQt
+
 TEMPLATE = lib
 
 CONFIG += c++11
 
 SOURCES += \
-        HelloActivator.cpp \
-        HelloImpl.cpp \
-        HelloServer.cpp
+    WelcomeService.cpp \
+    WelcomeQtImpl.cpp \
+    WelcomeQtActivator.cpp
 
 HEADERS += \
-    HelloActivator.h \
-    HelloImpl.h \
-    HelloServer.h
+    WelcomeService.h \
+    WelcomeQtImpl.h \
+    WelcomeQtActivator.h
 
 RESOURCES += \
     resource.qrc

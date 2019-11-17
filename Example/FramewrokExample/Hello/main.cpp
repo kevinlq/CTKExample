@@ -1,4 +1,4 @@
-﻿// Qt lib
+// Qt lib
 #include <QCoreApplication>
 #include <QDebug>
 #include <QSharedPointer>
@@ -12,7 +12,7 @@
 
 #include "ctkServiceReference.h"
 
-#include "./../PluginExample/HelloPlugin/HelloServer.h"
+#include "./../../PluginExample/HelloPlugin/HelloServer.h"
 
 int main(int argc, char *argv[])
 {
