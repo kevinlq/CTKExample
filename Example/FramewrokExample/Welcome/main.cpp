@@ -84,7 +84,6 @@ int main(int argc, char *argv[])
     qDebug () <<" welcom =================================";
 
     // 2. 使用过滤表达式，获取感兴趣服务
-    //refs = pContent->getServiceReferences<WelcomeService>("&(name=CTK)");
     refs = pContent->getServiceReferences<WelcomeService>("(&(name=CTK))");
     foreach (ctkServiceReference ref, refs)
     {
