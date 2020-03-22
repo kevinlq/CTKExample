@@ -24,7 +24,7 @@ void BlogEventHandlerActivator::start(ctkPluginContext *pContent)
 
     ctkDictionary props;
     props[ctkEventConstants::EVENT_TOPIC]   = "org/commontk/bloggenerator/published";
-    props[ctkEventConstants::EVENT_FILTER]  = "(author=devstone)";
+    props[ctkEventConstants::EVENT_FILTER]  = "(author=devstone*)";
 
     pContent->registerService<ctkEventHandler>(m_pEventHandler, props);
 }

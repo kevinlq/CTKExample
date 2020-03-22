@@ -24,7 +24,7 @@ public:
     BlogManager(ctkPluginContext *pContent);
 
     // 发布事件
-    void publishBlog(const Blog &blog);
+    void publishBlog(const Blog& blog);
 
 private:
     ctkPluginContext *m_pContent;

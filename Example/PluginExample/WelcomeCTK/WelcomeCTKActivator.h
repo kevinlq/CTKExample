@@ -11,7 +11,10 @@ class WelcomeCTKActivator : public QObject, public ctkPluginActivator
 {
     Q_OBJECT
     Q_INTERFACES(ctkPluginActivator)
+#if (QT_VERSION >= QT_VERSION_CHECK(5,0,0) )
     Q_PLUGIN_METADATA(IID "WELCOME_CTK")
+#endif
+
 public:
     WelcomeCTKActivator();
     ~WelcomeCTKActivator();

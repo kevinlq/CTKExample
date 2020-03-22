@@ -12,7 +12,7 @@ BlogManager::BlogManager(ctkPluginContext *pContent)
 
 }
 
-void BlogManager::publishBlog(const Blog &blog)
+void BlogManager::publishBlog(const Blog & blog)
 {
     if (Q_NULLPTR == m_pContent)
     {
@@ -39,6 +39,7 @@ void BlogManager::publishBlog(const Blog &blog)
 
         qDebug () << "publisher send message:" << props;
 
+        // 采用同步发送，异步发送可以使用 postEvent
         pEventAdmin->sendEvent (event);
     }
 }

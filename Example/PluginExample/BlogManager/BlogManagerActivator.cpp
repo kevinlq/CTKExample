@@ -14,12 +14,15 @@ void BlogManagerActivator::start(ctkPluginContext *pContent)
         m_pBlogManager = new(std::nothrow) BlogManager(pContent);
     }
 
-    Blog blog;
-    blog.m_strTitle = "CTK Event Admin";
-    blog.m_strContent = "This is a Simple blog";
-    blog.m_strAuthor = "devstone";
+    for (int i = 0; i < 10; i++)
+    {
+        Blog blog;
+        blog.m_strTitle = "CTK Event Admin";
+        blog.m_strContent = QString("This is a Simple blog %1").arg(i);
+        blog.m_strAuthor = QString("devstone%1").arg(i);
 
-    m_pBlogManager->publishBlog (blog);
+        m_pBlogManager->publishBlog (blog);
+    }
 }
 
 void BlogManagerActivator::stop(ctkPluginContext *pContent)

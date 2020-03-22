@@ -5,6 +5,7 @@ SUBDIRS +=\
     $$PWD/WelcomeCTK \
     $$PWD/WelcomeQt \
     $$PWD/BlogManager \
-    $$PWD/BlogEventHandler
+    $$PWD/BlogEventHandler \
+    $$PWD/LogPlugin
 
 CONFIG += ordered

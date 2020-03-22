@@ -52,19 +52,19 @@ int main(int argc, char *argv[])
 
             // 获取清单头和值
             QHash<QString, QString> headers = plugin->getHeaders();
-            qDebug() << "Headers:" << headers << "\r\n";
+            //qDebug() << "Headers:" << headers << "\r\n";
 
             // 获取符号名
             QString symb = plugin->getSymbolicName();
-            qDebug() << "Symbolic Name:" << symb << "\r\n";
+            //qDebug() << "Symbolic Name:" << symb << "\r\n";
 
             // 获取版本号
             ctkVersion version = plugin->getVersion();
-            qDebug() << "Version:" << version.toString()
-                     << "Major:" << version.getMajor()
-                     << "Micro:" << version.getMicro()
-                     << "Minor:" << version.getMinor()
-                     << "Qualifier:" << version.getQualifier();
+//            qDebug() << "Version:" << version.toString()
+//                     << "Major:" << version.getMajor()
+//                     << "Micro:" << version.getMicro()
+//                     << "Minor:" << version.getMinor()
+//                     << "Qualifier:" << version.getQualifier();
 
             plugin->start(ctkPlugin::START_TRANSIENT);
             qDebug () << "start plug "<< strPlugin;

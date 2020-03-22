@@ -57,6 +57,9 @@ int main(int argc, char *argv[])
                     QUrl::fromLocalFile (strPath + "/BlogManager.dll"));
 
         plugin->start ();
+
+        ctkPluginContext *pContexts = plugin->getPluginContext ();
+
     } catch (const ctkPluginException &e)
     {
         qDebug () << "failed to start BlogManager plugin " << e.what ();

@@ -3,7 +3,7 @@ include($$PWD/../../../CTKExample_SupportLib.pri)
 
 QT +=core gui widgets
 
-TARGET = FramewrokExample
+TARGET = FramewrokExampleHello
 TEMPLATE = app
 
 CONFIG += c++11
